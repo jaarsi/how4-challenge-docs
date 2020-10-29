@@ -7,4 +7,4 @@ SELECT pro.idProduto,
        est.qtProduto * pro.vrUnitario AS vrEstoque
 FROM db_Mercearia_DES.tbProduto pro
 INNER JOIN db_Mercearia_DES.tbEstoque est ON est.idProduto = pro.idProduto
-WHERE est.stInativo = 0;
+WHERE pro.stInativo = 0;

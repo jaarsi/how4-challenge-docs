@@ -23,10 +23,8 @@ CREATE TABLE `tbProduto` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE `tbEstoque` (
-  `idEstoque` int(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-  `idProduto` int(6) UNSIGNED NOT NULL COMMENT 'FK do produto',
+  `idProduto` int(6) UNSIGNED PRIMARY KEY COMMENT 'FK do produto',
   `qtProduto` int(6) NOT NULL COMMENT 'Quantidade disponivel do produto',
-  `stInativo` tinyint(1) NOT NULL DEFAULT 0 COMMENT 'Situação 0 - ativo/1 - inativo',
   CONSTRAINT `FK_ProdutoEstoque` FOREIGN KEY (idProduto) REFERENCES tbProduto(idProduto),
   CONSTRAINT `UC_Produto` UNIQUE (idProduto)  
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
